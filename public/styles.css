@@ -1,0 +1,47 @@
+.mobi-container {
+	max-width: 500px;
+	margin: 16px;
+	text-align: center;
+}
+@media only screen and (min-width: 532px){
+	.mobi-container{
+		margin: auto;
+		margin-top: 16px;
+	}
+}
+.input-group {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	vertical-align: middle;
+
+}
+
+.input-group {
+	height: 40px;
+}
+
+input{ width: 40%; background-color: white;}
+input[type="checkbox"]{height: 20px;}
+input[type="submit"]{width:50%;}
+
+textarea{width: 100%;}
+
+img[src="/logo.svg"]{
+	max-width: 75%;
+}
+
+.data-container {
+	margin: auto;
+	max-width: 80%;
+}
+
+.data-content{
+	min-width: 100%;
+}
+
+.data-summary {
+	min-width: 50%;
+}
+
+.mobi-container>table{min-width: 100%}

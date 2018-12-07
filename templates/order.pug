@@ -1,0 +1,19 @@
+include boilerplate.pug
+
++mobi
+	+branding
+	h3 Your delivery is on it's way!
+	p (Optional) Specify the details of your order
+	form 
+		div(class='row input-group') Requested delivery date: 
+			input(type='date', name='date')
+		
+		div(class='row input-group') Request a callback:
+			input(type='checkbox' name='callback')
+
+		div(class='row' style='text-align:left') Include a message:
+			
+		textarea(name='message' style='width: 100%')
+		div(class='row')
+			input(type='submit', name='out', value="I'm out")
+			input(type='submit', name='low', value="I'm running low")

@@ -1,0 +1,19 @@
+{
+  "name": "breidenba.ch",
+  "version": "0.0.1",
+  "description": "personal website and utilities suite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Breidenbach",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13",
+    "mongoose-sequence": "^4.0.1",
+    "pug": "^2.0.3",
+    "walkdir": "0.0.12"
+  }
+}

@@ -73,7 +73,7 @@ function quantifyCodename(s) {
 	if (s.indexOf(' ') != -1)
 		s = s.split(/\s/).join('')
 
-	if (s.length <= 4) return parseInt(s, 16)
+	if (s.length <= 4) return parseInt(s, 32)
 	else if (m == null? true: m.length < 3){
 		let c1 = c2 = c3 = temp = ''
 		let a = 0
@@ -118,8 +118,8 @@ module.exports.fromCodename = code => {
 	return quantified >= 0? reverseShuffle(quantified): quantified
 }
 
-module.exports.toHex = n =>
-	forwardShuffle(n).toString(16)
+module.exports.toB32 = n =>
+	forwardShuffle(n).toString(32)
 
 module.exports.toCodename = n => {
 	m = forwardShuffle(n)

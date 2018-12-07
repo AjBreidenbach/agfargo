@@ -6,8 +6,13 @@ module.exports = mongoose.model('Customer', (function (){
 	let schema = new mongoose.Schema({
 		_id: Number,
 		name: String,
-		mapsUrl: String,
-		status: String,
+		accountNumber: String,
+		address: String,
+		city: String,
+		state: String,
+		zip: String,
+		tel: String,
+		status: {type: String, default: 'unknown'},
 		creation: {type: Date, default: new Date()}
 	}, {_id: false})
 	schema.methods.getOrders = function(daterange, cb){
@@ -26,9 +31,14 @@ module.exports = mongoose.model('Customer', (function (){
 
 	schema.methods.show = function(){ return `
 **Name**: ${this.name}
-**Customer ID**: ${encoding.toCodename(this._id)}/${encoding.toHex(this._id)}
+**Customer ID**: ${encoding.toCodename(this._id)}/${encoding.toB32(this._id)}
+**Account Number**: ${this.accountNumber}
+**Address**: ${this.address}
+**City**: ${this.city}
+**State**: ${this.state}
+**Zip**: ${this.zip}
+**Telephone**: ${this.tel}
 **Status**: ${this.status}
-**Google Maps**: ${this.mapsUrl}
 `}
 
 	schema.statics.exists = function(id, cb) {
@@ -39,4 +49,3 @@ module.exports = mongoose.model('Customer', (function (){
 	}
 	return schema
 })())
-

@@ -14,7 +14,7 @@ module.exports = mongoose.model('Order', (function() {
 
 	schema.methods.show = function(){return`
 **ID**: ${this._id}
-**Customer ID**: ${encoding.toCodename(this.customerId)}/${encoding.toHex(this.customerId)}
+**Customer ID**: ${encoding.toCodename(this.customerId)}/${encoding.toB32(this.customerId)}
 **Date**: ${this.orderDate? this.orderDate.toLocaleString(): undefined}
 **Status**: ${this.status}
 **Requested Delivery**: ${this.requestedDelivery?this.requestedDelivery.toLocaleString():undefined}

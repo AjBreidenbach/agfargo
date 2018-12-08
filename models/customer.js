@@ -40,12 +40,22 @@ module.exports = mongoose.model('Customer', (function (){
 **Telephone**: ${this.tel}
 **Status**: ${this.status}
 `}
+	schema.methods.showMini = function(){ return `
+**Name**: ${this.name}
+**Customer ID**: ${encoding.toCodename(this._id)}/${encoding.toB32(this._id)}
+**City**: ${this.city}
+`}
+
 
 	schema.statics.exists = function(id, cb) {
 		return this.find({_id: id}, (err, res) => cb(err, res.length > 0))
 	}
 	schema.statics.getCustomer = function(id, cb) {
 		return this.findOne({ _id: id }, cb)
+	}
+
+	schema.statics.findCustomers = function(query, cb) {
+		return this.find({$text: {$search: query}}, cb)
 	}
 	return schema
 })())

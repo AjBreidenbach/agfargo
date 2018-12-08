@@ -25,6 +25,7 @@ commands['assign vehicle'] = require('./assign-vehicle.js')
 commands['begin day'] = require('./begin-day.js')
 commands['end day'] = require('./end-day.js')
 commands['refuel'] = require('./refuel.js')
+commands['find customers'] = require('./find-customers.js')
 
 
 function displayCommand(commandName) {
